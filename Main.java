@@ -10,8 +10,10 @@ public class Main {
         int b = rand.nextInt(11);
         int attempts = 3;
         boolean won = false;
+        int ammountat = 0;
 
         for(int i = 0; i < attempts; i++){
+            
             if(i == 0) {
                 System.out.println("Guess a number between 0 and 10 (attempt 1)");
             } else {
@@ -21,11 +23,12 @@ public class Main {
             boolean validInput = false;
             while(!validInput) {
                 if(sc.hasNextInt()){
+                    ammountat += 1;
                     int a = sc.nextInt();
                     validInput = true;
                     
                     if(a == b){
-                        System.out.println("You win!");
+                        System.out.println("You Win! It took you " + ammountat + "attempts");
                         won = true;
                         break;
                     }
